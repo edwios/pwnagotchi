@@ -103,7 +103,7 @@ class Display(View):
         # core.log("display module started")
         self._display = EPD()
         self._display.init(self._display.FULL_UPDATE)
-        self._display.Clear(WHITE)
+        self._display.Wipe(0xff)
         self._display.init(self._display.PART_UPDATE)
         self.on_render(self._on_view_rendered)
 
@@ -118,6 +118,6 @@ class Display(View):
         VideoHandler.render(img)
 
         if self._enabled:
-            self.canvas = img if self._rotation == 0 else img.rotate(self._rotation)
-            buf = self._display.getbuffer(self.canvas)
+            self.canvas = img if self._rotation == 0 else img.rotate(self._rotation, expand=1)
+#            buf = self._display.getbuffer(self.canvas)
             self._display.displayPartial(buf)
