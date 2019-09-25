@@ -1,7 +1,7 @@
 # main algorithm configuration
 main:
     # monitor interface to use
-    iface: mon0
+    iface: wlan0mon
     # command to run to bring the mon interface up in case it's not up already
     mon_start_cmd: /usr/bin/monstart
     mon_stop_cmd: /usr/bin/monstop
@@ -93,7 +93,7 @@ ui:
     fps: 0.3
     display:
         enabled: true
-        rotation: 180
+        rotation: 270
         video:
             enabled: true
             address: '10.0.0.2'
