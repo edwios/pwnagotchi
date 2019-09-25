@@ -38,7 +38,7 @@ class Agent(Client, AsyncAdvertiser, AsyncTrainer):
     @staticmethod
     def is_connected():
         try:
-            socket.create_connection(("www.google.com", 80))
+            socket.create_connection(("www.apple.com", 80))
             return True
         except OSError:
             pass
